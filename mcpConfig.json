@@ -1,0 +1,130 @@
+{
+  "name": "MachShip Full Freight MCP Server",
+  "description": "Full coverage MCP server for MachShip API including consignments, attachments, and carriers.",
+  "base_url": "https://live.machship.com/apiv2",
+  "authentication": {
+    "type": "bearer",
+    "header_name": "Authorization",
+    "token_prefix": "Bearer",
+    "token": "<REPLACE_WITH_YOUR_API_TOKEN>"
+  },
+  "endpoints": [
+    {
+      "name": "Create Consignment",
+      "method": "POST",
+      "path": "/consignments/createConsignment"
+    },
+    {
+      "name": "Create Existing Consignment",
+      "method": "POST",
+      "path": "/consignments/createExistingConsignment"
+    },
+    {
+      "name": "Edit Unmanifested Consignment",
+      "method": "POST",
+      "path": "/consignments/editUnmanifestedConsignment"
+    },
+    {
+      "name": "Create Consignment with Complex Items",
+      "method": "POST",
+      "path": "/consignments/createConsignmentWithComplexItems"
+    },
+    {
+      "name": "Delete Unmanifested Consignments",
+      "method": "POST",
+      "path": "/consignments/deleteUnmanifestedConsignments"
+    },
+    {
+      "name": "Get Recently Created or Updated Consignments",
+      "method": "POST",
+      "path": "/consignments/getRecentlyCreatedOrUpdatedConsignments"
+    },
+    {
+      "name": "Get Completed Consignments",
+      "method": "POST",
+      "path": "/consignments/getCompleted"
+    },
+    {
+      "name": "Get Consignment by ID",
+      "method": "POST",
+      "path": "/consignments/getConsignment"
+    },
+    {
+      "name": "Get Unmanifested Consignment for Edit",
+      "method": "POST",
+      "path": "/consignments/getUnmanifestedConsignmentForEdit"
+    },
+    {
+      "name": "Update Consignment Statuses",
+      "method": "POST",
+      "path": "/consignments/updateConsignmentStatuses"
+    },
+    {
+      "name": "Search Consignments",
+      "method": "POST",
+      "path": "/consignments/searchConsignments"
+    },
+    {
+      "name": "Get Consignment for Clone",
+      "method": "POST",
+      "path": "/consignments/getConsignmentForClone"
+    },
+    {
+      "name": "Get Attachments",
+      "method": "POST",
+      "path": "/consignments/getAttachments"
+    },
+    {
+      "name": "Get All Consignments",
+      "method": "POST",
+      "path": "/consignments/getAll"
+    },
+    {
+      "name": "Get Active Consignments",
+      "method": "POST",
+      "path": "/consignments/getActive"
+    },
+    {
+      "name": "Return Consignments By Reference",
+      "method": "POST",
+      "path": "/consignments/returnConsignmentsByReference1"
+    },
+    {
+      "name": "Get All Companies",
+      "method": "POST",
+      "path": "/companies/getAll"
+    },
+    {
+      "name": "Get Available Carriers",
+      "method": "POST",
+      "path": "/companies/getAvailableCarriersAccountsAndServices"
+    },
+    {
+      "name": "Get All Items",
+      "method": "POST",
+      "path": "/items/getAll"
+    },
+    {
+      "name": "Upload Attachments",
+      "method": "POST",
+      "path": "/attachments/uploadAttachments"
+    },
+    {
+      "name": "Get Attachments by Consignment ID",
+      "method": "POST",
+      "path": "/attachments/getAttachmentsByConsignmentIds"
+    },
+    {
+      "name": "Ping",
+      "method": "POST",
+      "path": "/authenticate/ping"
+    }
+  ],
+  "error_handling": {
+    "rate_limit_status": 429,
+    "retry_policy": {
+      "max_retries": 3,
+      "retry_backoff": "exponential"
+    }
+  }
+}
